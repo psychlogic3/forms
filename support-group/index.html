@@ -1,0 +1,922 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f4ef">
+  <meta name="description" content="A safe, non-judgmental support group led by a psychologist. Talk, listen, or simply sit in silence and know you're not alone. One-time entry fee ₹199, refundable before the 2nd session.">
+  <meta property="og:title" content="A Safe Space for You 💙 | PsychLogic Support Group">
+  <meta property="og:description" content="Sometimes you just want someone to listen — without judgment, without conditions. Join a psychologist-led support group.">
+  <title>A Safe Space for You 💙 | PsychLogic Support Group</title>
+  <style>
+    :root{color-scheme:light;--paper:#f6f4ef;--white:#fff;--ink:#1f2430;--muted:#6c7080;--border:#e2e0da;--blue:#2d4f86;--blue-2:#4f74b0;--sky:#e7eef9;--sky-2:#d6e3f5;--sage:#e8f0e8;--peach:#fbeee4;--lav:#efeaf7;--gold:#c08a45;--shadow:0 15px 45px rgba(30,45,80,.08)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:var(--paper);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;line-height:1.6}
+    button,input,select,textarea{font:inherit}button{cursor:pointer}a{color:inherit}img{max-width:100%}
+    .wrap{width:min(1136px,calc(100% - 48px));margin-inline:auto}
+    .serif{font-family:Georgia,'Times New Roman',serif}
+    .eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:800;color:var(--blue-2);margin:0 0 16px}
+    h2.title{font-family:Georgia,'Times New Roman',serif;font-weight:400;letter-spacing:-.045em;font-size:clamp(31px,4.2vw,50px);line-height:1.13;margin:0}
+    h2.title em{font-weight:400;color:var(--blue)}
+    .section-sub{color:var(--muted);font-size:14px;line-height:1.8;max-width:470px;margin:14px 0 0}
+
+    /* Header */
+    header{position:sticky;top:0;z-index:20;border-bottom:1px solid var(--border);background:rgba(246,244,239,.94);backdrop-filter:saturate(1.4) blur(8px)}
+    .nav{height:74px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:-.04em;text-decoration:none;font-size:22px;line-height:1}
+    .brand-mark{font:italic 29px Georgia,serif;background:linear-gradient(140deg,#2d4f86,#5f86c2);color:#fff;border-radius:11px;width:40px;height:40px;display:grid;place-items:center}
+    .brand small{display:block;letter-spacing:.13em;font-size:8px;text-transform:uppercase;color:#7f818a;margin-top:7px;font-weight:700}
+    .nav-links{display:flex;align-items:center;gap:6px}
+    .nav-links a.plain{font-size:12px;font-weight:700;text-decoration:none;color:#4a4f5c;padding:9px 12px;border-radius:30px}
+    .nav-links a.plain:hover{background:#fff}
+    .nav-cta{border:1px solid var(--blue);background:var(--blue);color:#fff!important;border-radius:50px;padding:10px 18px;text-decoration:none;font-size:12px;font-weight:800;white-space:nowrap;transition:.2s}
+    .nav-cta:hover{background:#213d6b}
+
+    /* Buttons */
+    .primary,.secondary{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:12px 22px;border-radius:11px;text-decoration:none;font-weight:800;font-size:14px;border:1px solid transparent;transition:transform .22s ease,box-shadow .22s ease,background .22s}
+    .primary{background:linear-gradient(115deg,#2d4f86,#45699f);color:#fff;box-shadow:0 10px 22px rgba(45,79,134,.18)}
+    .primary:hover{transform:translateY(-2px);box-shadow:0 14px 28px rgba(45,79,134,.24)}
+    .secondary{border-color:#c9d3e3;background:transparent;color:var(--ink)}
+    .secondary:hover{background:#fff}
+
+    /* Hero */
+    .hero{padding:70px 0 74px;display:grid;grid-template-columns:1.08fr .92fr;gap:50px;align-items:center}
+    .hero h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(44px,6vw,76px);font-weight:400;letter-spacing:-.055em;line-height:1.05;margin:0 0 24px}
+    .hero h1 em{font-weight:400;background:linear-gradient(110deg,#2d4f86,#6d93cf);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .lead{font-size:17px;color:#555a68;line-height:1.85;max-width:540px;margin:0 0 30px}
+    .lead strong{color:var(--ink);font-weight:700}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+    .fee-note{display:flex;flex-wrap:wrap;gap:8px 18px;margin:24px 0 0;padding:0;list-style:none;font-size:12px;color:#5c6170}
+    .fee-note li{display:flex;align-items:center;gap:7px}
+    .fee-note li:before{content:'';width:7px;height:7px;border-radius:50%;background:#7fa4d8;flex:none}
+    .hero-art{position:relative;min-height:420px;display:grid;place-items:center}
+    .hero-art svg{width:100%;max-width:470px;height:auto;overflow:visible}
+    .float-slow{animation:floaty 7s ease-in-out infinite}
+    .float-fast{animation:floaty 5s ease-in-out infinite reverse}
+    .pulse{animation:pulse 5.5s ease-in-out infinite;transform-origin:235px 220px}
+    @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+    @keyframes pulse{0%,100%{transform:scale(1);opacity:.95}50%{transform:scale(1.05);opacity:1}}
+
+    /* Listen band */
+    .listen{background:#fff;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:78px 0}
+    .listen-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:60px;align-items:start}
+    .quote{font-family:Georgia,serif;font-size:clamp(25px,3vw,35px);line-height:1.38;letter-spacing:-.025em;margin:0;color:#283044}
+    .quote span{color:var(--blue)}
+    .listen p.body{color:#5b6070;font-size:15px;line-height:1.9;margin:0 0 22px}
+    .chips{display:flex;flex-wrap:wrap;gap:9px;margin:0 0 24px;padding:0;list-style:none}
+    .chips li{font-size:12.5px;font-weight:650;color:#34405a;background:var(--sky);border:1px solid #d5e1f2;border-radius:40px;padding:7px 14px}
+    .chips li:nth-child(3n+2){background:var(--peach);border-color:#f1dcc9;color:#5a4230}
+    .chips li:nth-child(3n){background:var(--sage);border-color:#d5e3d5;color:#37503a}
+    .not-alone{border-left:3px solid #8fb0de;padding:6px 0 6px 18px;color:#3a4256;font-size:15px;line-height:1.85;margin:0}
+    .not-alone strong{color:var(--blue)}
+
+    /* Features */
+    .section{padding:80px 0}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap;margin-bottom:32px}
+    .feature-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+    .feature{position:relative;border:1px solid var(--border);border-radius:16px;padding:26px 22px;background:#fff;min-height:210px;transition:transform .3s ease,box-shadow .3s ease}
+    .feature:hover{transform:translateY(-5px);box-shadow:0 16px 34px rgba(30,45,80,.09)}
+    .feature .emoji{font-size:30px;line-height:1;display:grid;place-items:center;width:56px;height:56px;border-radius:15px;background:var(--sky)}
+    .feature:nth-child(2) .emoji{background:var(--peach)}
+    .feature:nth-child(3) .emoji{background:var(--lav)}
+    .feature:nth-child(4) .emoji{background:var(--sage)}
+    .feature h3{font:normal 21px/1.25 Georgia,serif;letter-spacing:-.02em;margin:20px 0 9px}
+    .feature p{font-size:13px;line-height:1.75;color:#676b78;margin:0}
+
+    /* Activities */
+    .activities{background:linear-gradient(180deg,#eef2f8,#f6f4ef);border-top:1px solid #e1e6ee;padding:80px 0}
+    .act-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+    .act{background:#fff;border:1px solid #e2e6ee;border-radius:18px;padding:28px 26px;box-shadow:0 8px 24px rgba(30,45,80,.04)}
+    .act-top{display:flex;align-items:center;gap:13px;margin-bottom:14px}
+    .act-icon{font-size:24px;width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:var(--sky);flex:none}
+    .act:nth-child(2) .act-icon{background:var(--peach)}
+    .act:nth-child(3) .act-icon{background:var(--sage)}
+    .act h3{font:normal 22px/1.2 Georgia,serif;letter-spacing:-.02em;margin:0}
+    .act p{font-size:13.5px;color:#626775;line-height:1.75;margin:0 0 14px}
+    .act ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+    .act li{font-size:13px;color:#3f4659;display:flex;gap:9px;align-items:baseline;line-height:1.55}
+    .act li:before{content:'✦';color:#7fa4d8;font-size:10px;flex:none}
+    .act:nth-child(2) li:before{color:#d59a6a}
+    .act:nth-child(3) li:before{color:#79a57c}
+    .tiny-task{margin-top:22px;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:18px;background:#fff;border:1px dashed #b9c9e2;border-radius:16px;padding:20px 24px}
+    .tiny-task .label{font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:800;color:var(--blue-2)}
+    .tiny-task p{margin:3px 0 0;font:normal 19px/1.4 Georgia,serif;color:#283044;min-height:27px;transition:opacity .25s}
+    .tiny-task .big{font-size:34px;line-height:1}
+    .ghost-btn{border:1px solid #c9d3e3;background:#f7f9fc;color:var(--blue);border-radius:10px;padding:10px 16px;font-size:12.5px;font-weight:800;white-space:nowrap}
+    .ghost-btn:hover{background:#fff}
+    .act-note{font-size:12px;color:var(--muted);text-align:center;margin:18px 0 0}
+
+    /* Flow */
+    .flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;counter-reset:flow;position:relative}
+    .flow li{list-style:none;position:relative;padding:0 18px 0 0}
+    .flow li:before{counter-increment:flow;content:'0' counter(flow);display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:#fff;border:1px solid #cbd7ea;color:var(--blue);font-weight:800;font-size:13px;position:relative;z-index:1}
+    .flow li:after{content:'';position:absolute;top:22px;left:44px;right:0;height:1px;background:repeating-linear-gradient(90deg,#b8c8e2 0 6px,transparent 6px 12px)}
+    .flow li:last-child:after{display:none}
+    .flow h3{font-size:15px;margin:16px 0 6px;letter-spacing:-.01em}
+    .flow p{font-size:12.5px;color:var(--muted);margin:0;line-height:1.7}
+
+    /* Fee */
+    .fee-band{background:#fff;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:70px 0}
+    .fee-card{display:grid;grid-template-columns:auto 1fr;gap:42px;align-items:center;background:linear-gradient(120deg,#f2f6fc,#fbf6f0);border:1px solid #e0e6ef;border-radius:22px;padding:38px 42px}
+    .price{font-family:Georgia,serif;font-size:72px;line-height:1;letter-spacing:-.05em;color:var(--blue)}
+    .price small{display:block;font:800 11px/1.4 Inter,system-ui,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#7b8090;margin-top:10px}
+    .fee-card h3{font:normal 27px/1.25 Georgia,serif;letter-spacing:-.025em;margin:0 0 10px}
+    .fee-card p{color:#575c6a;font-size:14.5px;line-height:1.85;margin:0 0 18px;max-width:600px}
+
+    /* Promise + FAQ */
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start}
+    .promise{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:14px}
+    .promise li{display:flex;gap:14px;align-items:start;background:#fff;border:1px solid var(--border);border-radius:13px;padding:15px 17px}
+    .promise b{display:block;font-size:14px;margin-bottom:2px}
+    .promise span.txt{font-size:13px;color:#676b78;line-height:1.65}
+    .promise .ic{font-size:20px;line-height:1.2;flex:none}
+    .faq{margin-top:26px;display:grid;gap:10px}
+    .faq details{background:#fff;border:1px solid var(--border);border-radius:13px;padding:0 18px}
+    .faq summary{cursor:pointer;list-style:none;padding:16px 0;font-weight:750;font-size:14px;display:flex;justify-content:space-between;gap:12px}
+    .faq summary::-webkit-details-marker{display:none}
+    .faq summary:after{content:'+';color:var(--blue);font-size:20px;line-height:1;font-weight:500}
+    .faq details[open] summary:after{content:'–'}
+    .faq details p{margin:0 0 16px;font-size:13.5px;color:#5f6472;line-height:1.75}
+
+    /* Join form */
+    .join{background:#eef1f5;border-top:1px solid #e0e4ea;padding:76px 0 86px}
+    .join-layout{display:grid;grid-template-columns:minmax(240px,.72fr) minmax(0,1.28fr);gap:52px;align-items:start}
+    .join-intro{position:sticky;top:100px;padding-top:12px}
+    .join-intro p.txt{color:var(--muted);font-size:14px;line-height:1.8;max-width:320px}
+    .steps{list-style:none;padding:0;margin:28px 0;display:grid;gap:16px}
+    .steps li{display:flex;gap:13px;align-items:center;color:#4f5462;font-size:13px;font-weight:650}
+    .step-number{display:grid;place-items:center;background:#dbe5f4;color:var(--blue);font-size:10px;border-radius:50%;width:30px;height:30px;flex:none;font-weight:800}
+    .gentle{font-size:12px;color:#5c6372;background:#fff;border:1px solid #dfe4ec;border-radius:12px;padding:13px 15px;line-height:1.7;max-width:330px}
+    .form-card{background:#fff;border-radius:20px;border:1px solid #dde3ec;box-shadow:var(--shadow);padding:38px}
+    .form-head{margin-bottom:26px}
+    .form-head h3{font:normal 28px/1.2 Georgia,serif;letter-spacing:-.03em;margin:0 0 6px}
+    .form-head p{margin:0;color:var(--muted);font-size:12.5px}
+    .field-group{border:0;margin:0;padding:0;min-width:0}
+    .field-group+.field-group{padding-top:27px;margin-top:30px;border-top:1px solid var(--border)}
+    .group-title{font-weight:800;font-size:14px;margin-bottom:18px;display:block;padding:0;float:left;width:100%}
+    .group-title+*{clear:both}
+    .group-title span{font-size:11px;color:var(--blue-2);margin-right:9px;letter-spacing:.09em}
+    .fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+    .field.full{grid-column:1/-1}
+    .field>label,.label{font-size:12.5px;font-weight:750;display:block;color:#3c404b;margin:0 0 7px}
+    .req{color:#b2365e}
+    .opt{color:#8b8f9a;font-weight:600}
+    .field input[type=text],.field input[type=tel],.field input[type=email],.field textarea{display:block;width:100%;border:1px solid #d9dce3;background:#fff;border-radius:9px;padding:11px 13px;min-height:46px;font-size:14px;color:var(--ink);outline:0;transition:border-color .2s}
+    .field input:focus,.field textarea:focus{border-color:#8fb0de}
+    .field textarea{min-height:88px;resize:vertical}
+    .field input::placeholder,.field textarea::placeholder{color:#a3a6af}
+    input:focus-visible,textarea:focus-visible,button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid rgba(45,105,180,.35);outline-offset:2px}
+    .helper{font-size:11.5px;color:var(--muted);margin:7px 0 0;line-height:1.6}
+    .choices{display:grid;gap:9px}
+    .choices.two{grid-template-columns:1fr 1fr}
+    .choice{display:flex;align-items:center;gap:10px;border:1px solid #dfe2e8;border-radius:10px;padding:11px 13px;font-size:13.5px;cursor:pointer;background:#fff;transition:border-color .2s,background .2s;min-height:46px}
+    .choice:hover{border-color:#b8c8e2}
+    .choice input{accent-color:var(--blue);width:17px;height:17px;flex:none;margin:0}
+    .choice:has(input:checked){border-color:#8fb0de;background:#f3f7fd}
+    .other-input{margin-top:9px}
+    .other-input[hidden]{display:none!important}
+    .payment{display:grid;grid-template-columns:170px 1fr;gap:22px;align-items:center;padding:20px;border-radius:14px;border:1px solid #e0e4ea;background:#fafbfd}
+    .qr-column{display:flex;flex-direction:column;align-items:center;gap:8px}
+    .qr-frame{width:170px;height:170px;border:1px dashed #b9c4d6;border-radius:9px;display:grid;place-items:center;overflow:hidden;background:#fff}
+    .qr-frame img{display:none;width:100%;height:100%;object-fit:contain}
+    .qr-place{text-align:center;padding:10px;color:#8c93a3;font-size:12px}
+    .qr-help-toggle{display:flex;align-items:center;gap:6px;padding:3px 0;border:0;background:transparent;color:var(--blue);font-size:11px;font-weight:700;line-height:1.35;text-align:left}
+    .qr-help-icon{display:inline-grid;place-items:center;flex:none;width:17px;height:17px;border-radius:50%;border:1px solid #c3d1e7;background:#eaf0f9;color:var(--blue);font-size:11px;font-weight:850}
+    .payment h4{font-size:14px;margin:0 0 4px}
+    .amount-line{font:normal 30px/1.1 Georgia,serif;color:var(--blue);margin:2px 0 8px;letter-spacing:-.03em}
+    .amount-line small{font:600 11px Inter,system-ui,sans-serif;color:var(--muted);letter-spacing:0}
+    .upi-line{display:block;font-size:13px;word-break:break-all;color:var(--blue);font-weight:800;margin:4px 0 8px}
+    .copy-upi{background:#fff;border:1px solid #cfd8e6;border-radius:7px;padding:6px 11px;color:var(--blue);font-size:11px;font-weight:800}
+    .pay-link{display:inline-flex;align-items:center;justify-content:center;min-height:42px;max-width:260px;width:100%;margin:14px 0 0;background:linear-gradient(115deg,#2d4f86,#45699f);border-radius:9px;color:#fff;font-size:12.5px;font-weight:800;text-decoration:none;padding:9px 14px}
+    .pay-note{font-size:10.5px;color:#7c8291;line-height:1.5;margin:7px 0 0;max-width:260px}
+    .payment-steps{margin:12px 0 0;padding:13px 15px;border:1px solid #e0e6ef;border-radius:10px;background:#f8fafd}
+    .payment-steps[hidden]{display:none}
+    .payment-steps-title{margin:0 0 8px;font-size:12px;font-weight:800;color:var(--blue)}
+    .payment-steps ol{list-style:none;margin:0;padding:0;display:grid;gap:7px;counter-reset:paystep}
+    .payment-steps li{display:flex;gap:9px;align-items:baseline;font-size:11.5px;color:#5b6170;line-height:1.5;counter-increment:paystep}
+    .payment-steps li:before{content:counter(paystep);display:grid;place-items:center;flex:none;width:18px;height:18px;border-radius:50%;background:#dfe7f4;color:var(--blue);font-size:10px;font-weight:800}
+    .refund-box{color:#3f5a3f;font-size:12px;background:var(--sage);border-radius:9px;padding:11px 13px;margin:13px 0 0;line-height:1.65}
+    .warning{color:#77542a;font-size:11.5px;background:#fbf4e6;border-radius:9px;padding:10px 13px;margin:10px 0 0;line-height:1.6}
+    .filebox{border:1px dashed #bfcbe0;padding:15px;border-radius:10px;background:#f9fbfe}
+    .filebox input[type=file]{width:100%;font-size:12.5px;max-width:100%}
+    .filebox p{font-size:11.5px;color:var(--muted);margin:8px 0 0}
+    .proof-status{color:#3e5d8f!important;font-weight:650;min-height:14px}
+    .tick-row{display:flex;align-items:start;gap:10px;margin-top:24px;color:#555b68;font-size:12px;line-height:1.65;cursor:pointer}
+    .tick-row input{margin:2px 0 0;accent-color:var(--blue);width:17px;height:17px;flex:none}
+    .alert{display:none;margin:0 0 19px;background:#fff2f1;border:1px solid #f4c7c6;color:#7e3232;border-radius:10px;padding:12px 14px;font-size:12.5px}
+    .alert.show{display:block}
+    .alert a{color:#2d4f86;font-weight:800}
+    .support-link{display:inline-flex;align-items:center;gap:6px;margin:9px 0 0;padding:8px 12px;border:1px solid #c3cfe3;border-radius:8px;background:#fff;text-decoration:none!important}
+    .submit{margin-top:20px;width:100%;border:0;min-height:54px;background:linear-gradient(115deg,#2d4f86,#45699f);color:#fff;border-radius:11px;font-size:14px;font-weight:800;display:flex;justify-content:center;align-items:center;gap:12px;box-shadow:0 10px 22px rgba(45,79,134,.18);transition:transform .2s,box-shadow .2s}
+    .submit:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 14px 28px rgba(45,79,134,.24)}
+    .submit:disabled{cursor:wait;opacity:.65}
+    .wait-status{margin:13px auto 0;max-width:440px;padding:12px 15px;border-radius:10px;border:1px solid #d7e1f0;background:linear-gradient(100deg,#f1f5fb,#f6f4ef);text-align:center;font-size:12.5px;font-weight:700;color:#2d4f86;line-height:1.7}
+    .wait-status[hidden]{display:none}
+    .foot{font-size:11px;color:var(--muted);margin:12px 0 0;text-align:center}
+    .success{display:none;text-align:center;padding:50px 10px}
+    .success .check{width:66px;height:66px;border-radius:50%;display:grid;place-items:center;background:#e3edf9;font-size:31px;margin:0 auto 22px}
+    .success h3{font:normal 33px Georgia,serif;margin:0 0 12px;letter-spacing:-.02em}
+    .success p{font-size:14px;color:var(--muted);max-width:430px;margin:0 auto 16px;line-height:1.75}
+    .success strong{color:var(--blue)}
+    .redirect-note{color:#2f3a52!important;font-weight:600}
+    .redirect-note strong{font:700 23px Georgia,serif}
+    .wa-help{font-size:11.5px!important;max-width:420px!important;margin:12px auto!important}
+    .offscreen{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+
+    /* Crisis + footer */
+    .crisis{background:#fff8f2;border-top:1px solid #f1e2d4;padding:26px 0}
+    .crisis-row{display:flex;gap:16px;align-items:start}
+    .crisis-row .ic{font-size:22px;line-height:1.3}
+    .crisis p{margin:0;font-size:13px;color:#5b4a3c;line-height:1.75}
+    .crisis a{font-weight:800;color:#8a4a1a;text-decoration:none;white-space:nowrap}
+    footer{padding:24px 0 30px;font-size:11.5px;color:#868a94;border-top:1px solid var(--border)}
+    .footer-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    footer a{text-decoration:none;font-weight:700;color:#5a6172}
+
+    /* Mobile sticky CTA */
+    .mobile-cta{display:none}
+    section,#success{scroll-margin-top:84px}
+
+    /* Reveal */
+    .reveal{opacity:0;transform:translateY(22px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1)}
+    .reveal.in{opacity:1;transform:none}
+
+    @media(max-width:980px){.feature-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.act-grid{grid-template-columns:1fr}.flow{grid-template-columns:1fr 1fr;gap:28px 0}.flow li:nth-child(2):after{display:none}}
+    @media(max-width:900px){.hero{gap:20px}.hero-art{min-height:340px}.listen-grid,.two-col{grid-template-columns:1fr;gap:34px}.join-layout{gap:30px}.form-card{padding:28px}}
+    @media(max-width:760px){
+      .wrap{width:min(100% - 32px,600px)}
+      .nav{height:66px}.nav-links a.plain{display:none}
+      .hero{grid-template-columns:1fr;padding:44px 0 50px;gap:6px}
+      .hero-art{min-height:auto;order:-1}.hero-art svg{max-width:330px}
+      .section,.activities,.listen{padding:56px 0}
+      .fee-card{grid-template-columns:1fr;gap:18px;padding:28px 24px}
+      .price{font-size:58px}
+      .tiny-task{grid-template-columns:1fr;text-align:left;gap:12px}
+      .tiny-task .big{display:none}
+      .join{padding:54px 0 70px}
+      .join-layout{grid-template-columns:1fr}.join-intro{position:static}.steps{display:none}.gentle{max-width:none}
+      .form-card{padding:24px 18px}
+      .mobile-cta{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:30;justify-content:space-between;align-items:center;gap:12px;background:#1f3a66;color:#fff;border-radius:14px;padding:10px 10px 10px 16px;box-shadow:0 14px 34px rgba(20,35,65,.32);transition:transform .35s ease,opacity .35s ease}
+      .mobile-cta.hide{transform:translateY(130%);opacity:0;pointer-events:none}
+      .mobile-cta span{font-size:12.5px;font-weight:700;line-height:1.35}
+      .mobile-cta span small{display:block;font-weight:500;opacity:.8;font-size:11px}
+      .mobile-cta a{background:#fff;color:#1f3a66;text-decoration:none;font-weight:800;font-size:13px;border-radius:10px;padding:10px 16px;white-space:nowrap}
+      footer{padding-bottom:92px}
+    }
+    @media(max-width:520px){
+      .brand{font-size:19px}.brand-mark{width:36px;height:36px}.brand small{display:none}
+      .nav-cta{padding:9px 13px}
+      .feature-grid,.fields,.choices.two{grid-template-columns:1fr}.field.full{grid-column:auto}
+      .flow{grid-template-columns:1fr}.flow li:after{display:none}
+      .payment{grid-template-columns:1fr;text-align:center}.qr-frame{margin:auto}.pay-link,.pay-note{margin-left:auto;margin-right:auto}
+      .hero h1{font-size:clamp(40px,11vw,56px)}
+      .lead{font-size:15.5px}
+      .crisis-row{flex-direction:column;gap:6px}
+    }
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}.reveal{opacity:1;transform:none}}
+    /* QR-only payment (no UPI app button / UPI ID). */
+    .save-qr{display:inline-flex;align-items:center;justify-content:center;gap:7px;width:170px;min-height:40px;border-radius:9px;border:1px solid var(--blue);background:#fff;color:var(--blue);font-size:12px;font-weight:800;text-decoration:none}
+    .save-qr:hover{background:#f3f7fd}
+    .pay-guide{border-radius:12px;background:linear-gradient(120deg,#eef4fc,#fbf6f0);border:1px solid #d9e3f1;border-left:4px solid var(--blue);padding:14px 16px;text-align:left}
+    .pay-guide-title{margin:0 0 9px;font-size:13px;font-weight:850;color:var(--blue)}
+    .pay-guide-title b{background:var(--blue);color:#fff;border-radius:6px;padding:1px 7px;margin-left:3px}
+    .pay-guide ol{list-style:none;margin:0;padding:0;display:grid;gap:7px;counter-reset:pg}
+    .pay-guide li{display:flex;gap:9px;align-items:baseline;font-size:12.5px;color:#3f4659;line-height:1.45;counter-increment:pg}
+    .pay-guide li:before{content:counter(pg);display:grid;place-items:center;flex:none;width:19px;height:19px;border-radius:50%;background:var(--blue);color:#fff;font-size:10px;font-weight:800}
+    .pay-guide li b{color:#1f2430}
+    .qr-hint{margin:0;font-size:11px;color:#7c8291;text-align:center}
+  </style>
+</head>
+<body>
+  <header><div class="wrap nav">
+    <a href="#top" class="brand"><span class="brand-mark">P</span><span>PsychLogic<small>Where psychology meets strategy.</small></span></a>
+    <nav class="nav-links" aria-label="Main">
+      <a class="plain" href="../">← All forms</a>
+      <a class="plain" href="#what-we-do">What we do</a>
+      <a class="plain" href="#faq">FAQ</a>
+      <a class="nav-cta" href="#join">Join the group 💙</a>
+    </nav>
+  </div></header>
+
+  <main id="top">
+    <!-- HERO -->
+    <div class="wrap hero">
+      <div>
+        <p class="eyebrow">A safe space for you • Psychologist-led support group</p>
+        <h1>You don't have to<br>carry it <em>alone.</em></h1>
+        <p class="lead">Sometimes you don't want a suggestion. You don't want an opinion. You don't need a solution. <strong>You just want someone to listen</strong> — without judgment, without conditions.</p>
+        <div class="hero-actions">
+          <a href="#join" class="primary">Join us today <span aria-hidden="true">→</span></a>
+          <a href="#what-we-do" class="secondary">What happens in the group</a>
+        </div>
+        <ul class="fee-note" aria-label="Key details">
+          <li>Entry fee ₹199 (one-time)</li>
+          <li>Fully refundable before the 2nd session</li>
+          <li>No pressure to stay</li>
+        </ul>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <!-- Original illustration: a circle of people around a warm, safe centre. -->
+        <svg viewBox="0 0 470 440" role="presentation">
+          <defs>
+            <radialGradient id="glow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#fff3e3"/><stop offset=".55" stop-color="#fbe4cf"/><stop offset="1" stop-color="#fbe4cf" stop-opacity="0"/></radialGradient>
+            <linearGradient id="blob" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#dde8f7"/><stop offset=".55" stop-color="#e9eef3"/><stop offset="1" stop-color="#e6efe3"/></linearGradient>
+            <linearGradient id="heart" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4f74b0"/><stop offset="1" stop-color="#2d4f86"/></linearGradient>
+          </defs>
+          <path d="M235 22c88 0 182 52 199 140 18 92-46 205-150 243-98 36-214-6-249-96C3 220 30 120 92 70c40-32 88-48 143-48z" fill="url(#blob)"/>
+          <circle cx="235" cy="220" r="120" fill="url(#glow)" class="pulse"/>
+          <circle cx="235" cy="220" r="104" fill="none" stroke="#b9cae4" stroke-width="1.5" stroke-dasharray="3 8"/>
+          <!-- people around the circle -->
+          <g>
+            <g transform="translate(235 98)"><circle r="17" fill="#2d4f86"/><path d="M-26 44c2-20 12-29 26-29s24 9 26 29z" fill="#2d4f86"/></g>
+            <g transform="translate(340 152)"><circle r="16" fill="#d99a6c"/><path d="M-24 42c2-19 11-27 24-27s22 8 24 27z" fill="#d99a6c"/></g>
+            <g transform="translate(348 268)"><circle r="16" fill="#7aa67d"/><path d="M-24 42c2-19 11-27 24-27s22 8 24 27z" fill="#7aa67d"/></g>
+            <g transform="translate(235 318)"><circle r="17" fill="#8e7cc0"/><path d="M-26 44c2-20 12-29 26-29s24 9 26 29z" fill="#8e7cc0"/></g>
+            <g transform="translate(122 268)"><circle r="16" fill="#5f86c2"/><path d="M-24 42c2-19 11-27 24-27s22 8 24 27z" fill="#5f86c2"/></g>
+            <g transform="translate(130 152)"><circle r="16" fill="#e0b25c"/><path d="M-24 42c2-19 11-27 24-27s22 8 24 27z" fill="#e0b25c"/></g>
+          </g>
+          <!-- heart in the centre -->
+          <path d="M235 247c-30-20-44-35-44-52 0-13 10-23 23-23 9 0 16 5 21 12 5-7 12-12 21-12 13 0 23 10 23 23 0 17-14 32-44 52z" fill="url(#heart)"/>
+          <!-- speech bubbles -->
+          <g class="float-slow">
+            <rect x="350" y="62" width="104" height="46" rx="16" fill="#fff" stroke="#dbe3ef"/>
+            <path d="M372 106l-8 16 22-14z" fill="#fff"/>
+            <text x="402" y="91" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="15" fill="#2d4f86">I hear you.</text>
+          </g>
+          <g class="float-fast">
+            <rect x="10" y="330" width="122" height="46" rx="16" fill="#fff" stroke="#dbe3ef"/>
+            <path d="M110 332l14-14-2 18z" fill="#fff"/>
+            <text x="71" y="359" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="15" fill="#6b4a2f">Me too. 💙</text>
+          </g>
+          <g class="float-slow"><circle cx="70" cy="80" r="5" fill="#b9cae4"/><circle cx="420" cy="360" r="7" fill="#f1d3b9"/><circle cx="395" cy="25" r="4" fill="#cfe0cd"/></g>
+        </svg>
+      </div>
+    </div>
+
+    <!-- WHO IS THIS FOR -->
+    <section class="listen" aria-labelledby="listen-title"><div class="wrap listen-grid">
+      <div class="reveal">
+        <p class="eyebrow">Is this for you?</p>
+        <h2 class="title" id="listen-title">If you feel like you have <em>no one to talk to,</em> this space is for you.</h2>
+      </div>
+      <div class="reveal">
+        <p class="body">Going through something heavy right now? Whatever it is, big or small, you're welcome here.</p>
+        <ul class="chips" aria-label="Things people come to talk about">
+          <li>Breakup</li><li>Exam stress</li><li>Anxiety</li><li>Loneliness</li><li>Relationship problems</li><li>Family issues</li><li>Overthinking</li><li>Low confidence</li><li>Academic pressure</li><li>Career confusion</li><li>Grief</li><li>Simply a difficult time in life</li>
+        </ul>
+        <p class="not-alone">It's a place where you can share your thoughts, your struggles, or even just <strong>sit in silence and know you're not alone.</strong></p>
+      </div>
+    </div></section>
+
+    <!-- WHAT YOU GET -->
+    <section class="section" aria-labelledby="why-title"><div class="wrap">
+      <div class="section-head reveal">
+        <div><p class="eyebrow">Why join us</p><h2 class="title" id="why-title">Held with care.<br><em>Guided with skill.</em></h2></div>
+        <p class="section-sub">A small, kind circle of people who understand — gently guided by a psychologist, so everyone feels safe.</p>
+      </div>
+      <div class="feature-grid">
+        <article class="feature reveal"><div class="emoji" aria-hidden="true">🧠</div><h3>Led by a Psychologist</h3><p>Every session is guided by a psychologist who keeps the space safe, respectful and focused on your wellbeing.</p></article>
+        <article class="feature reveal"><div class="emoji" aria-hidden="true">🤝</div><h3>Supportive &amp; non-judgmental</h3><p>No one here will judge, lecture or rush you. You are accepted exactly as you are, on your good days and hard ones.</p></article>
+        <article class="feature reveal"><div class="emoji" aria-hidden="true">💬</div><h3>Talk about what you're going through</h3><p>Share as much or as little as you want. Speak when you're ready, or simply listen — both are completely okay.</p></article>
+        <article class="feature reveal"><div class="emoji" aria-hidden="true">🌱</div><h3>Learn healthy ways to cope</h3><p>Pick up simple, practical tools to handle stress, overthinking and difficult emotions — and slowly move forward.</p></article>
+      </div>
+    </div></section>
+
+    <!-- WHAT WE DO -->
+    <section class="activities" id="what-we-do" aria-labelledby="do-title"><div class="wrap">
+      <div class="section-head reveal">
+        <div><p class="eyebrow">What we do together</p><h2 class="title" id="do-title">Not just talking.<br><em>Feeling lighter, together.</em></h2></div>
+        <p class="section-sub">Our sessions mix honest conversation with activities that lift your mood and small, doable steps that help you feel better in everyday life.</p>
+      </div>
+      <div class="act-grid">
+        <article class="act reveal">
+          <div class="act-top"><span class="act-icon" aria-hidden="true">💬</span><h3>Share &amp; be heard</h3></div>
+          <p>A calm space to open up — or just listen — while others truly hear you.</p>
+          <ul><li>Gentle check-ins: "How are you, really?"</li><li>Share only what you're comfortable with</li><li>Listening without advice, unless you ask for it</li></ul>
+        </article>
+        <article class="act reveal">
+          <div class="act-top"><span class="act-icon" aria-hidden="true">🎲</span><h3>Mood-lifting activities &amp; games</h3></div>
+          <p>Light, fun moments to help you laugh, relax and connect with others.</p>
+          <ul><li>Fun group games and icebreakers</li><li>Mood-lifting activities to ease stress</li><li>Calming and relaxation exercises</li></ul>
+        </article>
+        <article class="act reveal">
+          <div class="act-top"><span class="act-icon" aria-hidden="true">🌿</span><h3>Small tasks to try</h3></div>
+          <p>We set simple, doable tasks so you can carry the good feeling into your daily life.</p>
+          <ul><li>Writing a journal ✍️</li><li>Going for a run or a walk 🏃</li><li>Small self-care and healthy-habit goals</li><li>Sharing your progress with the group</li></ul>
+        </article>
+      </div>
+      <div class="tiny-task reveal" aria-live="polite">
+        <span class="big" aria-hidden="true" id="task-emoji">🌤️</span>
+        <div><span class="label">Try a tiny task today</span><p id="task-text">Write down three small things that went okay today.</p></div>
+        <button type="button" class="ghost-btn" id="task-btn">Show me another ↻</button>
+      </div>
+      <p class="act-note">Activities and tasks are always optional and suggested gently — you go at your own pace.</p>
+    </div></section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section" aria-labelledby="how-title"><div class="wrap">
+      <div class="section-head reveal">
+        <div><p class="eyebrow">How it works</p><h2 class="title" id="how-title">Joining is <em>simple.</em></h2></div>
+        <p class="section-sub">Fill the short form below — it only takes a couple of minutes.</p>
+      </div>
+      <ol class="flow reveal" style="padding:0;margin:0">
+        <li><h3>Fill the form</h3><p>Share only what you're comfortable with. Everything stays confidential.</p></li>
+        <li><h3>Pay ₹199 once</h3><p>Save the QR, scan it from your UPI app's gallery option, then upload your payment screenshot.</p></li>
+        <li><h3>We verify &amp; add you</h3><p>We'll check your payment and reach out on WhatsApp to add you to the group.</p></li>
+        <li><h3>Attend your first session</h3><p>Not the right fit? Get a full refund before the 2nd session.</p></li>
+      </ol>
+    </div></section>
+
+    <!-- FEE -->
+    <section class="fee-band" aria-labelledby="fee-title"><div class="wrap">
+      <div class="fee-card reveal">
+        <div class="price">₹199<small>Entry fee · one-time</small></div>
+        <div>
+          <h3 id="fee-title">There's no pressure to stay.</h3>
+          <p>If you attend the first session and feel the group isn't right for you, your <strong>₹199 will be fully refunded before the 2nd session.</strong> No awkward questions asked.</p>
+          <a href="#join" class="primary">Save my spot <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div></section>
+
+    <!-- PROMISE + FAQ -->
+    <section class="section" id="faq" aria-labelledby="faq-title"><div class="wrap two-col">
+      <div class="reveal">
+        <p class="eyebrow">Our promise to you</p>
+        <h2 class="title">A space that <em>feels safe.</em></h2>
+        <ul class="promise">
+          <li><span class="ic" aria-hidden="true">🔒</span><div><b>Confidential</b><span class="txt">What you share in the group stays in the group. Your form details are kept private.</span></div></li>
+          <li><span class="ic" aria-hidden="true">🫶</span><div><b>No judgment, no conditions</b><span class="txt">Everyone is treated with kindness and respect — always.</span></div></li>
+          <li><span class="ic" aria-hidden="true">🤫</span><div><b>It's okay to just listen</b><span class="txt">You never have to speak. Sitting in silence is welcome too.</span></div></li>
+          <li><span class="ic" aria-hidden="true">📵</span><div><b>No unwanted calls</b><span class="txt">We use your number only to add you to the group. We won't call or message without your permission.</span></div></li>
+        </ul>
+      </div>
+      <div class="reveal">
+        <p class="eyebrow">Questions you may have</p>
+        <h2 class="title" id="faq-title">Good to <em>know.</em></h2>
+        <div class="faq">
+          <details><summary>Do I have to talk in the sessions?</summary><p>Not at all. Many people simply listen at first. You can share when — and if — you feel ready.</p></details>
+          <details><summary>Will my personal details be kept private?</summary><p>Yes. Your name, number and anything you share in the form are kept 100% confidential and are used only to support you and place you in a suitable group. A nickname is fine if you prefer.</p></details>
+          <details><summary>What if the group isn't right for me?</summary><p>That's completely okay. Attend the first session, and if it doesn't feel right, your ₹199 will be fully refunded before the 2nd session.</p></details>
+          <details><summary>How will I be added to the group?</summary><p>After you submit the form and we verify your payment, we'll reach out to you on WhatsApp with the joining details.</p></details>
+          <details><summary>Is this the same as therapy?</summary><p>A support group is a guided, shared space to talk, listen and learn coping skills together. It doesn't replace individual therapy or medical treatment, but it can be a meaningful source of support alongside them.</p></details>
+          <details><summary>I'd like to help others. Can I volunteer?</summary><p>We'd love that! There's a question in the form where you can tell us if you'd like to help host sessions.</p></details>
+        </div>
+      </div>
+    </div></section>
+
+    <!-- JOIN FORM -->
+    <section id="join" class="join" aria-labelledby="join-title"><div class="wrap join-layout">
+      <aside class="join-intro">
+        <p class="eyebrow">Join us today</p>
+        <h2 class="title" id="join-title">If you're carrying something heavy, <em>we're here.</em></h2>
+        <p class="txt">This short form helps us understand you better and place you in a suitable group. Share only what you're comfortable with.</p>
+        <ol class="steps"><li><span class="step-number">01</span>Tell us a little about you</li><li><span class="step-number">02</span>Pay ₹199 &amp; upload the screenshot</li><li><span class="step-number">03</span>We verify &amp; add you on WhatsApp</li></ol>
+        <p class="gentle">🔒 Everything you share here is kept <strong>100% confidential.</strong></p>
+      </aside>
+
+      <div class="form-card">
+        <div id="form-area">
+          <div class="form-head"><h3>A Safe Space for You 💙</h3><p>Fields marked <span class="req">*</span> are required.</p></div>
+          <p id="alert" class="alert" role="alert" aria-live="assertive"></p>
+          <form id="join-form" action="" method="POST" enctype="application/x-www-form-urlencoded" target="join-response-frame" accept-charset="UTF-8" novalidate>
+            <input type="hidden" name="reg_ref" id="h-ref">
+            <input type="hidden" name="request_nonce" id="h-nonce">
+            <input type="hidden" name="issues" id="h-issues">
+            <input type="hidden" name="fee" id="h-fee">
+            <input type="hidden" name="proof_data" id="h-proof-data">
+            <input type="hidden" name="proof_name" id="h-proof-name">
+            <div class="offscreen" aria-hidden="true"><label for="honeypot">Leave this blank</label><input id="honeypot" type="text" tabindex="-1" autocomplete="off" name="website"></div>
+
+            <fieldset class="field-group"><legend class="group-title"><span>01 /</span> About you</legend>
+              <div class="fields">
+                <div class="field full">
+                  <label for="first-name">Would you like to share your real first name? <span class="req">*</span></label>
+                  <input required maxlength="60" autocomplete="given-name" placeholder="Your first name (or a nickname)" type="text" id="first-name" name="first_name">
+                  <p class="helper">Your name will be kept confidential. A nickname is completely fine too.</p>
+                </div>
+                <div class="field">
+                  <label for="phone">Your phone number (preferably WhatsApp) <span class="req">*</span></label>
+                  <input required maxlength="22" inputmode="tel" autocomplete="tel" placeholder="+91 98765 43210" type="tel" id="phone" name="phone">
+                  <p class="helper">Only used if there's an issue adding you to the group. We won't call or message you without your permission.</p>
+                </div>
+                <div class="field">
+                  <label for="email">Email address <span class="opt">(optional)</span></label>
+                  <input maxlength="160" autocomplete="email" placeholder="you@example.com" type="email" id="email" name="email">
+                  <p class="helper">Helpful for refunds or updates, if you'd like.</p>
+                </div>
+                <div class="field full" role="radiogroup" aria-labelledby="describe-label">
+                  <span class="label" id="describe-label">What best describes you? <span class="req">*</span></span>
+                  <div class="choices">
+                    <label class="choice"><input type="radio" name="describes" value="Student" required> I'm a Student</label>
+                    <label class="choice"><input type="radio" name="describes" value="Working Professional"> I am a Working Professional</label>
+                    <label class="choice"><input type="radio" name="describes" value="Other"> Other</label>
+                  </div>
+                  <input class="other-input" type="text" id="describe-other" name="describes_other" maxlength="80" placeholder="Please tell us (e.g. homemaker, preparing for exams…)" aria-label="Describe yourself" hidden>
+                  <p class="helper">This helps us understand our members better.</p>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="field-group"><legend class="group-title"><span>02 /</span> What you're going through</legend>
+              <div class="fields">
+                <div class="field full">
+                  <span class="label" id="issues-label">Would you like to tell us about the issue you are facing? <span class="req">*</span></span>
+                  <div class="choices two" id="issue-list" aria-labelledby="issues-label" role="group">
+                    <label class="choice"><input type="checkbox" value="Exam Stress"> Exam Stress</label>
+                    <label class="choice"><input type="checkbox" value="Diagnosed with a Mental Health Condition"> Diagnosed with a Mental Health Condition</label>
+                    <label class="choice"><input type="checkbox" value="Diagnosed with a Life Threatening Disease or Something Serious"> Diagnosed with a Life-Threatening Disease or Something Serious</label>
+                    <label class="choice"><input type="checkbox" value="Just need Someone to Talk"> Just need Someone to Talk</label>
+                    <label class="choice"><input type="checkbox" value="Family Issues"> Family Issues</label>
+                    <label class="choice"><input type="checkbox" value="Grief (Lost Someone Close)"> Grief (Lost Someone Close)</label>
+                    <label class="choice"><input type="checkbox" value="Breakup"> Breakup</label>
+                    <label class="choice"><input type="checkbox" value="Loneliness"> Loneliness</label>
+                    <label class="choice"><input type="checkbox" value="Other" id="issue-other-check"> Other</label>
+                  </div>
+                  <input class="other-input" type="text" id="issue-other" name="issues_other" maxlength="150" placeholder="Tell us in a few words" aria-label="Other issue" hidden>
+                  <p class="helper">Select all that apply. This helps us understand you better.</p>
+                </div>
+                <div class="field full">
+                  <label for="background" id="background-label">A little about your background <span class="req">*</span></label>
+                  <input required maxlength="150" type="text" id="background" name="background" placeholder="Students: your field or subject · Professionals: your industry or type of work">
+                  <p class="helper">If you're a student, what field or subject do you study? If you're working, what industry or type of work do you do? This helps us place you in a suitable support group and is kept 100% confidential.</p>
+                </div>
+                <div class="field full">
+                  <label for="message">Anything else you'd like us to know? <span class="opt">(optional)</span></label>
+                  <textarea maxlength="800" id="message" name="message" placeholder="Only if you feel like sharing. It's okay to leave this empty."></textarea>
+                </div>
+                <div class="field full" role="radiogroup" aria-labelledby="host-label">
+                  <span class="label" id="host-label">Would you like to help host these sessions? <span class="opt">(optional)</span></span>
+                  <div class="choices">
+                    <label class="choice"><input type="radio" name="host" value="Yes, I'd love to help!"> Yes, I'd love to help!</label>
+                    <label class="choice"><input type="radio" name="host" value="Maybe in the future"> Maybe in the future</label>
+                    <label class="choice"><input type="radio" name="host" value="No, I'd just like to be a member"> No, I'd just like to be a member</label>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="field-group"><legend class="group-title"><span>03 /</span> Pay entry fee &amp; upload proof</legend>
+              <div class="payment">
+                <div class="qr-column">
+                  <div class="qr-frame"><img id="payment-qr" src="assets/payment-qr.png" alt="UPI payment QR code"><div class="qr-place" id="qr-place">UPI QR code</div></div>
+                  <a class="save-qr" id="save-qr" href="assets/payment-qr.png" download="PsychLogic-Payment-QR.png">⬇ Save QR to gallery</a>
+                  <p class="qr-hint">or long-press the QR to save it</p>
+                </div>
+                <div class="pay-guide" aria-label="How to pay">
+                  <p class="pay-guide-title">How to pay <b class="fee-amt">₹199</b></p>
+                  <ol>
+                    <li><span>Tap <b>Save QR to gallery</b> (or take a screenshot of the QR).</span></li>
+                    <li><span>Open any UPI app → <b>Scan QR</b> → choose the QR from your <b>gallery</b>.</span></li>
+                    <li><span>Enter <b class="fee-amt">₹199</b> and pay.</span></li>
+                    <li><span>Screenshot the <b>payment successful</b> screen and upload it below.</span></li>
+                  </ol>
+                </div>
+              </div>
+              <p class="refund-box">💙 <strong>No pressure to stay:</strong> if the group doesn't feel right after your first session, your ₹199 will be fully refunded before the 2nd session.</p>
+              <p class="warning">Please pay exactly ₹199 and keep a clear screenshot. Payments are verified manually; uploading a screenshot does not confirm it automatically.</p>
+              <div class="fields" style="margin-top:18px">
+                <div class="field full"><label for="proof">Upload payment screenshot <span class="req">*</span></label>
+                  <div class="filebox"><input required id="proof" type="file" accept="image/jpeg,image/png,image/webp"><p>JPG, PNG or WEBP, up to 10 MB. Never share a PIN, OTP or password.</p><p id="proof-status" class="proof-status" role="status" aria-live="polite"></p></div>
+                </div>
+              </div>
+            </fieldset>
+
+            <label class="tick-row" for="consent"><input required id="consent" type="checkbox" name="consent" value="Agreed"><span>I confirm my details are accurate, and I agree that PsychLogic may use them confidentially to verify my payment and add me to the support group. <span class="req">*</span></span></label>
+            <button class="submit" type="submit" id="submit-btn"><span id="submit-label">Join the support group</span><span aria-hidden="true">→</span></button>
+            <p id="wait-status" class="wait-status" role="status" aria-live="polite" hidden></p>
+            <p class="foot">Your information is kept confidential and used only for this support group.</p>
+          </form>
+          <iframe name="join-response-frame" id="join-response-frame" title="Registration response" class="offscreen" tabindex="-1" aria-hidden="true"></iframe>
+          <div class="success" id="success" role="status" aria-live="polite">
+            <div class="check">💙</div>
+            <h3>You're not alone anymore.</h3>
+            <p>Your registration has been received. Your payment is <strong>pending manual verification</strong> — once verified, we'll add you to the group on WhatsApp.</p>
+            <p id="reg-reference"></p>
+            <p class="redirect-note" aria-live="polite">Opening WhatsApp in <strong id="wa-countdown">5</strong> seconds…</p>
+            <a class="primary" id="wa-link" target="_blank" rel="noopener noreferrer" href="#">Open WhatsApp now ↗</a>
+            <p class="wa-help">If WhatsApp doesn't open automatically, tap the button above. You can review the message before sending it.</p>
+          </div>
+        </div>
+      </div>
+    </div></section>
+
+    <!-- CRISIS NOTE -->
+    <section class="crisis" aria-label="Urgent help"><div class="wrap crisis-row">
+      <span class="ic" aria-hidden="true">🆘</span>
+      <p><strong>Need help right now?</strong> This support group is not an emergency service. If you're in crisis or thinking of harming yourself, please call <a href="tel:14416">Tele-MANAS 14416</a> or <a href="tel:18008914416">1-800-891-4416</a> (free, 24×7, Govt. of India), or dial <a href="tel:112">112</a> for emergencies.</p>
+    </div></section>
+  </main>
+
+  <footer><div class="wrap footer-row">
+    <span>© <span id="year"></span> PsychLogic · <a href="../">All forms</a> · <a href="https://psychlogic.in" target="_blank" rel="noopener">psychlogic.in</a> · <a href="mailto:team@psychlogic.in">team@psychlogic.in</a></span>
+    <span>If you're carrying something heavy, you don't have to do it alone. 💙</span>
+  </div></footer>
+
+  <div class="mobile-cta hide" id="mobile-cta"><span>A safe space for you 💙<small>₹199 one-time · refundable</small></span><a href="#join">Join now</a></div>
+
+  <script>
+  'use strict';
+  // ====================== OWNER SETTINGS: EDIT THESE ===========================
+  // 1) Paste your NEW Apps Script Web App URL here (ends in /exec). See README.md.
+  const JOIN_ENDPOINT_URL = '';
+  // 2) Entry fee in INR. If you change it, also change FEE_INR in the Apps Script.
+  const ENTRY_FEE = 199;
+  // 3) Same UPI as the notes website.
+  const UPI_ID = 'amang9290@ybl';
+  const UPI_PAYEE_NAME = 'Aman Gupta';
+  // 4) WhatsApp number: country code + number, digits only.
+  const OWNER_WHATSAPP_NUMBER = '917987623467';
+  const WHATSAPP_REDIRECT_SECONDS = 5;
+  // Must match CONFIG.VERSION in the Apps Script.
+  const REQUIRED_BACKEND_VERSION = 'psychlogic-support-2026-11-23-v1';
+  // ============================================================================
+
+  const byId = id => document.getElementById(id);
+  byId('year').textContent = new Date().getFullYear();
+
+  /* ---------- Reveal on scroll ---------- */
+  const reveals = [...document.querySelectorAll('.reveal')];
+  if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const io = new IntersectionObserver(entries => entries.forEach(en => {
+      if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+    }), {threshold: .08, rootMargin: '0px 0px -20px 0px'});
+    reveals.forEach(el => io.observe(el));
+    // Safety net: never leave content hidden.
+    setTimeout(() => reveals.forEach(el => el.classList.add('in')), 4000);
+  } else { reveals.forEach(el => el.classList.add('in')); }
+
+  /* ---------- Tiny task picker ---------- */
+  const TINY_TASKS = [
+    ['🌤️','Write down three small things that went okay today.'],
+    ['✍️','Journal for 5 minutes: "Right now, I feel…"'],
+    ['🏃','Go for a 10-minute walk or run — no phone, just you.'],
+    ['💧','Drink a full glass of water and stretch for 2 minutes.'],
+    ['📵','Take a 30-minute break from social media.'],
+    ['🌬️','Breathe in for 4, hold for 4, out for 6. Repeat five times.'],
+    ['📞','Send a kind message to someone you miss.'],
+    ['🌙','Put your phone away 20 minutes before sleeping tonight.'],
+    ['🎵','Play one song that makes you feel good — and really listen.'],
+    ['🧹','Tidy one tiny corner of your room.'],
+    ['☀️','Step outside and spend 5 minutes in sunlight.'],
+    ['💙','Say one kind thing to yourself — out loud.']
+  ];
+  let taskIndex = 0;
+  byId('task-btn').addEventListener('click', () => {
+    let next; do { next = Math.floor(Math.random() * TINY_TASKS.length); } while (next === taskIndex);
+    taskIndex = next;
+    const p = byId('task-text'); p.style.opacity = 0;
+    setTimeout(() => { byId('task-emoji').textContent = TINY_TASKS[next][0]; p.textContent = TINY_TASKS[next][1]; p.style.opacity = 1; }, 200);
+  });
+
+  /* ---------- Mobile sticky CTA: hide when the form is on screen ---------- */
+  const mobileCta = byId('mobile-cta');
+  let formInView = false;
+  const updateCta = () => mobileCta.classList.toggle('hide', formInView || window.scrollY < 520);
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(entries => entries.forEach(en => { formInView = en.isIntersecting; updateCta(); }), {threshold: 0})
+      .observe(byId('join'));
+  }
+  window.addEventListener('scroll', updateCta, {passive: true});
+
+  /* ---------- Payment block ---------- */
+  const money = n => '₹' + Number(n).toLocaleString('en-IN');
+  document.querySelectorAll('.fee-amt').forEach(el => el.textContent = money(ENTRY_FEE));
+  const qr = byId('payment-qr');
+  const showQr = () => { if (qr.naturalWidth > 0) { qr.style.display = 'block'; byId('qr-place').style.display = 'none'; } };
+  qr.addEventListener('load', showQr); if (qr.complete) showQr();
+
+  /* ---------- "Other" fields and background label ---------- */
+  const form = byId('join-form'), button = byId('submit-btn');
+  const describeOther = byId('describe-other');
+  const issueOtherCheck = byId('issue-other-check'), issueOther = byId('issue-other');
+  const bgLabel = byId('background-label'), bg = byId('background');
+  const BG = {
+    'Student': ['What field or subject do you study?', 'e.g. B.Sc. Psychology, Class 12 Science, Engineering…'],
+    'Working Professional': ['What industry or type of work do you do?', 'e.g. IT, teaching, healthcare, business…'],
+    'Other': ['Tell us a little about what you do', 'e.g. preparing for exams, homemaker, taking a break…']
+  };
+  form.querySelectorAll('input[name=describes]').forEach(r => r.addEventListener('change', () => {
+    const v = form.querySelector('input[name=describes]:checked')?.value;
+    describeOther.hidden = v !== 'Other'; describeOther.required = v === 'Other';
+    if (v === 'Other') describeOther.focus();
+    if (BG[v]) { bgLabel.firstChild.textContent = BG[v][0] + ' '; bg.placeholder = BG[v][1]; }
+  }));
+  issueOtherCheck.addEventListener('change', () => {
+    issueOther.hidden = !issueOtherCheck.checked; issueOther.required = issueOtherCheck.checked;
+    if (issueOtherCheck.checked) issueOther.focus();
+  });
+  const pickedIssues = () => [...byId('issue-list').querySelectorAll('input[type=checkbox]:checked')].map(c => c.value);
+
+  /* ---------- Validation ---------- */
+  const phone = byId('phone'), email = byId('email');
+  const phoneValid = v => { const s = v.trim(), d = (s.match(/\d/g) || []).length; return /^\+?[\d\s().-]+$/.test(s) && d >= 10 && d <= 15; };
+  const emailValid = v => /^[A-Z0-9.!#$%&'*+/=?^_`{|}~-]+@(?:[A-Z0-9](?:[A-Z0-9-]{0,61}[A-Z0-9])?\.)+[A-Z]{2,}$/i.test(v.trim()) && !v.includes('..');
+  const vPhone = () => phone.setCustomValidity(phone.value.trim() && !phoneValid(phone.value) ? 'Enter a valid phone number with 10 to 15 digits.' : '');
+  const vEmail = () => email.setCustomValidity(email.value.trim() && !emailValid(email.value) ? 'Enter a valid email address, such as name@example.com.' : '');
+  phone.addEventListener('input', vPhone); phone.addEventListener('blur', vPhone);
+  email.addEventListener('input', vEmail); email.addEventListener('blur', vEmail);
+
+  const showError = msg => { const el = byId('alert'); el.replaceChildren(); el.textContent = msg; el.classList.add('show'); el.scrollIntoView({behavior: 'smooth', block: 'center'}); };
+  const clearError = () => { byId('alert').textContent = ''; byId('alert').classList.remove('show'); };
+  form.addEventListener('input', clearError);
+  form.addEventListener('change', clearError);
+
+  let activeRef = '', currentNonce = '', activeFingerprint = '';
+  function supportUrl() {
+    const msg = 'Hello PsychLogic, I registered for the support group but my confirmation is pending.' + (activeRef ? ' My reference is ' + activeRef + '.' : '') + ' Please help.';
+    return 'https://wa.me/' + OWNER_WHATSAPP_NUMBER + '?text=' + encodeURIComponent(msg);
+  }
+  function supportError(message) {
+    const el = byId('alert'); el.replaceChildren();
+    const t = document.createElement('span'); t.textContent = message + ' ';
+    const a = document.createElement('a'); a.href = supportUrl(); a.className = 'support-link'; a.target = '_blank'; a.rel = 'noopener noreferrer';
+    a.textContent = 'WhatsApp us ↗';
+    el.append(t, a); el.classList.add('show'); el.scrollIntoView({behavior: 'smooth', block: 'center'});
+  }
+
+  /* ---------- Screenshot preparation (same approach as the notes site) ---------- */
+  const proofInput = byId('proof'), proofStatus = byId('proof-status');
+  const MAX_IMAGE_BYTES = 10 * 1024 * 1024, TARGET_IMAGE_BYTES = 1100 * 1024, SUBMISSION_TIMEOUT = 90000;
+  let prepared = null, proofVersion = 0, preparation = Promise.resolve(null);
+  const readAsDataURL = blob => new Promise((res, rej) => { const r = new FileReader(); r.onload = () => res(String(r.result)); r.onerror = () => rej(new Error('read')); r.readAsDataURL(blob); });
+  const imageFromFile = file => new Promise((res, rej) => { const u = URL.createObjectURL(file), i = new Image(); i.onload = () => { URL.revokeObjectURL(u); res(i); }; i.onerror = () => { URL.revokeObjectURL(u); rej(new Error('img')); }; i.src = u; });
+  const canvasToBlob = (c, q) => new Promise(res => c.toBlob(res, 'image/webp', q));
+  async function prepareScreenshot(file) {
+    let chosen = file, name = file.name.slice(0, 90);
+    if (file.size > 450 * 1024) {
+      try {
+        const img = await imageFromFile(file);
+        const scale = Math.min(1, 2200 / Math.max(img.naturalWidth, img.naturalHeight));
+        const c = document.createElement('canvas');
+        c.width = Math.max(1, Math.round(img.naturalWidth * scale)); c.height = Math.max(1, Math.round(img.naturalHeight * scale));
+        const ctx = c.getContext('2d');
+        if (ctx) {
+          ctx.fillStyle = '#fff'; ctx.fillRect(0, 0, c.width, c.height); ctx.drawImage(img, 0, 0, c.width, c.height);
+          for (const q of [0.86, 0.78, 0.68]) {
+            const b = await canvasToBlob(c, q);
+            if (!b || b.type !== 'image/webp') break;
+            if (b.size < chosen.size) { chosen = b; name = file.name.replace(/\.[^.]+$/, '').slice(0, 76) + '.webp'; }
+            if (chosen.size <= TARGET_IMAGE_BYTES) break;
+          }
+        }
+        c.width = 0; c.height = 0;
+      } catch (_) { /* original is still acceptable */ }
+    }
+    if (chosen.size > MAX_IMAGE_BYTES) throw new Error('too large');
+    return {file, name, bytes: chosen.size, dataUrl: await readAsDataURL(chosen)};
+  }
+  proofInput.addEventListener('change', () => {
+    const file = proofInput.files[0], version = ++proofVersion; prepared = null;
+    if (!file) { proofStatus.textContent = ''; preparation = Promise.resolve(null); return; }
+    if (!['image/jpeg', 'image/png', 'image/webp'].includes(file.type) || file.size > MAX_IMAGE_BYTES) {
+      proofStatus.textContent = 'Please select a JPG, PNG or WEBP screenshot no larger than 10 MB.'; preparation = Promise.resolve(null); return;
+    }
+    proofStatus.textContent = 'Preparing screenshot…';
+    preparation = prepareScreenshot(file).then(r => { if (version === proofVersion) { prepared = r; proofStatus.textContent = 'Screenshot ready ✓ (' + Math.round(r.bytes / 1024) + ' KB)'; } return r; })
+      .catch(() => { if (version === proofVersion) proofStatus.textContent = 'Could not read this image. Please choose another screenshot.'; return null; });
+  });
+
+  /* ---------- Submission, confirmation & WhatsApp redirect ---------- */
+  let uploading = false, deadline = 0, submitTimer = null, pollTimer = null, pollScript = null, pollScriptTimer = null, waTimer = null, waitTimer = null;
+  const waitStatus = byId('wait-status');
+  function startWait() {
+    clearInterval(waitTimer); let s = 6; waitStatus.hidden = false;
+    const render = () => { waitStatus.textContent = s > 0 ? `Please wait — ${s} second${s === 1 ? '' : 's'}. Saving your registration… please keep this page open.` : 'Still confirming your registration — please don’t submit again.'; };
+    render(); waitTimer = setInterval(() => { s = Math.max(0, s - 1); render(); if (!s) clearInterval(waitTimer); }, 1000);
+  }
+  function stopWait() { clearInterval(waitTimer); waitStatus.hidden = true; waitStatus.textContent = ''; }
+  function release() { stopWait(); uploading = false; button.disabled = false; byId('submit-label').textContent = 'Join the support group'; }
+  function cleanupPoll() { clearTimeout(pollTimer); clearTimeout(pollScriptTimer); clearTimeout(submitTimer); if (pollScript) { pollScript.remove(); pollScript = null; } }
+  function confirmed() {
+    if (!uploading) return;
+    cleanupPoll(); release(); byId('h-proof-data').value = '';
+    form.hidden = true; document.querySelector('.form-head').hidden = true; byId('success').style.display = 'block';
+    byId('reg-reference').textContent = 'Your reference: ' + activeRef;
+    const name = byId('first-name').value.trim();
+    const msg = 'Hi PsychLogic! 💙 I' + (name ? ' (' + name + ')' : '') + ' just registered for the support group.\nMy reference is ' + activeRef + '. I have uploaded my ₹' + ENTRY_FEE + ' payment screenshot for verification.';
+    const url = 'https://wa.me/' + OWNER_WHATSAPP_NUMBER + '?text=' + encodeURIComponent(msg);
+    const link = byId('wa-link'); link.href = url;
+    let s = WHATSAPP_REDIRECT_SECONDS; byId('wa-countdown').textContent = String(s);
+    clearInterval(waTimer);
+    waTimer = setInterval(() => { s--; byId('wa-countdown').textContent = String(Math.max(0, s)); if (s <= 0) { clearInterval(waTimer); window.location.assign(url); } }, 1000);
+    link.addEventListener('click', () => clearInterval(waTimer), {once: true});
+    byId('success').scrollIntoView({behavior: 'smooth', block: 'center'});
+  }
+  function failed(message) {
+    if (!uploading) return;
+    cleanupPoll(); release(); byId('h-proof-data').value = '';
+    supportError(message + ' Please message us before submitting again, as your registration may already have been received. Reference: ' + activeRef + '.');
+  }
+  window.addEventListener('message', ev => {
+    let d = ev.data; if (typeof d === 'string') { try { d = JSON.parse(d); } catch (_) { return; } }
+    if (!uploading || !d || d.type !== 'psychlogic-support-result' || d.nonce !== currentNonce) return;
+    const host = (() => { try { return new URL(ev.origin).hostname; } catch (_) { return ''; } })();
+    if (!(host === 'script.google.com' || host.endsWith('.googleusercontent.com'))) return;
+    if (d.ok === true) confirmed(); else if (d.ok === false) failed('Your registration could not be saved.');
+  });
+  window.psychlogicSupportStatus = function (d) {
+    if (!uploading || !d || d.ref !== activeRef || d.nonce !== currentNonce) return;
+    clearTimeout(pollScriptTimer); if (pollScript) { pollScript.remove(); pollScript = null; }
+    if (d.status === 'saved') { confirmed(); return; }
+    if (d.status === 'failed') { failed('Our service could not record this registration.'); return; }
+    if (Date.now() < deadline) schedulePoll(2300);
+  };
+  function schedulePoll(ms) { clearTimeout(pollTimer); if (uploading) pollTimer = setTimeout(checkStatus, ms); }
+  function checkStatus() {
+    if (!uploading || Date.now() >= deadline) return;
+    if (pollScript) { pollScript.remove(); pollScript = null; }
+    const q = new URLSearchParams({action: 'status', ref: activeRef, nonce: currentNonce, _: String(Date.now())});
+    const sc = document.createElement('script'); pollScript = sc; sc.src = JOIN_ENDPOINT_URL + '?' + q.toString(); sc.async = true;
+    sc.onerror = () => { if (pollScript === sc) { clearTimeout(pollScriptTimer); sc.remove(); pollScript = null; schedulePoll(3200); } };
+    pollScriptTimer = setTimeout(() => { if (pollScript === sc) { sc.remove(); pollScript = null; schedulePoll(3200); } }, 8500);
+    document.head.append(sc); byId('submit-label').textContent = 'Confirming your registration…';
+  }
+  const endpointReady = () => /^https:\/\/script\.google\.com\/macros\/s\/[\w-]+\/exec$/.test(JOIN_ENDPOINT_URL);
+  let backendOkAt = 0;
+  function verifyBackend() {
+    if (Date.now() - backendOkAt < 5 * 60 * 1000) return Promise.resolve(true);
+    return new Promise(resolve => {
+      let done = false, timer; const sc = document.createElement('script');
+      const finish = ok => { if (done) return; done = true; clearTimeout(timer); sc.remove(); if (window.psychlogicSupportHealth === onHealth) delete window.psychlogicSupportHealth; if (ok) backendOkAt = Date.now(); resolve(ok); };
+      const onHealth = d => finish(Boolean(d && d.type === 'psychlogic-support-health' && d.ready === true && d.version === REQUIRED_BACKEND_VERSION));
+      window.psychlogicSupportHealth = onHealth;
+      sc.src = JOIN_ENDPOINT_URL + '?' + new URLSearchParams({action: 'health', _: String(Date.now())}).toString();
+      sc.onerror = () => finish(false); timer = setTimeout(() => finish(false), 11000); document.head.appendChild(sc);
+    });
+  }
+
+  form.addEventListener('submit', async ev => {
+    ev.preventDefault(); clearError();
+    if (uploading) return;
+    vPhone(); vEmail();
+    const describes = form.querySelector('input[name=describes]:checked');
+    const issues = pickedIssues();
+    // Friendly checks in the order the fields appear.
+    if (!byId('first-name').value.trim()) { showError('Please share your first name or a nickname.'); byId('first-name').focus(); return; }
+    if (!phone.value.trim() || !phoneValid(phone.value)) { showError('Please enter a valid phone number (10–15 digits).'); phone.focus(); return; }
+    if (email.value.trim() && !emailValid(email.value)) { showError('Please check your email address, or leave it empty.'); email.focus(); return; }
+    if (!describes) { showError('Please choose what best describes you.'); return; }
+    if (describes.value === 'Other' && !describeOther.value.trim()) { showError('Please tell us briefly what describes you.'); describeOther.focus(); return; }
+    if (!issues.length) { showError('Please select at least one option about what you are facing (you can choose "Just need Someone to Talk").'); return; }
+    if (issueOtherCheck.checked && !issueOther.value.trim()) { showError('Please describe the "Other" issue in a few words.'); issueOther.focus(); return; }
+    if (!bg.value.trim()) { showError('Please add a few words about your background.'); bg.focus(); return; }
+    const file = proofInput.files[0];
+    if (!file) { showError('Please upload your ₹' + ENTRY_FEE + ' payment screenshot.'); proofInput.focus(); return; }
+    if (!['image/jpeg', 'image/png', 'image/webp'].includes(file.type) || file.size > MAX_IMAGE_BYTES) { showError('Please upload a JPG, PNG or WEBP screenshot of 10 MB or less.'); return; }
+    if (!byId('consent').checked) { showError('Please tick the confirmation box to continue.'); return; }
+    if (!endpointReady()) { supportError('Online registration is being set up right now. Please message us on WhatsApp to join.'); return; }
+    if (!navigator.onLine) { showError('You seem to be offline. Please reconnect and try again.'); return; }
+
+    uploading = true; button.disabled = true; byId('submit-label').textContent = 'Connecting…'; startWait();
+    try {
+      if (!await verifyBackend()) { cleanupPoll(); release(); supportError('Our registration service is temporarily unavailable. Nothing was sent from this attempt.'); return; }
+      byId('submit-label').textContent = 'Preparing screenshot…';
+      const result = prepared?.file === file ? prepared : ((await preparation)?.file === file ? await preparation : await prepareScreenshot(file));
+      if (!result) throw new Error('prep');
+      const issueText = issues.map(x => x === 'Other' ? 'Other: ' + issueOther.value.trim() : x).join(', ');
+      const fp = JSON.stringify([byId('first-name').value.trim(), phone.value.trim(), describes.value, issueText, file.name, file.size, file.lastModified]);
+      if (fp !== activeFingerprint) {
+        activeFingerprint = fp;
+        activeRef = 'SG-' + Date.now().toString(36).toUpperCase() + '-' + Math.random().toString(36).slice(2, 8).toUpperCase().padEnd(6, 'X');
+        currentNonce = crypto.randomUUID ? crypto.randomUUID() : Date.now() + '-' + Math.random().toString(36).slice(2) + Math.random().toString(36).slice(2);
+      }
+      byId('h-ref').value = activeRef; byId('h-nonce').value = currentNonce;
+      byId('h-issues').value = issueText; byId('h-fee').value = String(ENTRY_FEE);
+      byId('h-proof-data').value = result.dataUrl; byId('h-proof-name').value = result.name;
+      form.action = JOIN_ENDPOINT_URL;
+      byId('submit-label').textContent = 'Sending…';
+      deadline = Date.now() + SUBMISSION_TIMEOUT;
+      submitTimer = setTimeout(() => failed('We could not confirm your registration.'), SUBMISSION_TIMEOUT);
+      schedulePoll(1800);
+      HTMLFormElement.prototype.submit.call(form);
+    } catch (_) {
+      cleanupPoll(); release(); byId('h-proof-data').value = '';
+      showError('We could not prepare your screenshot. Please choose another clear image and try again.');
+    }
+  });
+  // Save QR: iPhone -> share sheet ("Save Image"); others -> direct download; fallback -> open image.
+  (function(){
+    const btn=document.getElementById('save-qr');
+    if(!btn)return;
+    btn.addEventListener('click',async ev=>{
+      ev.preventDefault();
+      const src=btn.getAttribute('href'),fname=btn.getAttribute('download')||'Payment-QR.png';
+      try{
+        const res=await fetch(src,{cache:'force-cache'});
+        if(!res.ok)throw new Error('fetch');
+        const blob=await res.blob();
+        const isiOS=/iPad|iPhone|iPod/.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
+        const file=new File([blob],fname,{type:blob.type||'image/png'});
+        if(isiOS&&navigator.canShare&&navigator.canShare({files:[file]})){
+          try{await navigator.share({files:[file]});return;}catch(e){if(e&&e.name==='AbortError')return;}
+        }
+        const url=URL.createObjectURL(blob),a=document.createElement('a');
+        a.href=url;a.download=fname;document.body.appendChild(a);a.click();a.remove();
+        setTimeout(()=>URL.revokeObjectURL(url),4000);
+        const old=btn.textContent;btn.textContent='✓ QR saved';setTimeout(()=>btn.textContent=old,2200);
+      }catch(_){window.open(src,'_blank');}
+    });
+  })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f4ef">
+  <meta name="description" content="PsychLogic Forms — registrations for the support group, psychology notes, RCI M.Phil Clinical Psychology, mock test series and GATE Psychology, all in one place.">
+  <meta property="og:title" content="PsychLogic Forms">
+  <meta property="og:description" content="All PsychLogic registrations in one place.">
+  <title>PsychLogic Forms | Registrations in one place</title>
+  <style>
+    :root{color-scheme:light;--paper:#f6f4ef;--ink:#1f2430;--muted:#6c7080;--border:#e2e0da;--blue:#2d4f86;--blue-2:#4f74b0;--sky:#e7eef9;--peach:#fbeee4;--sage:#e8f0e8;--lav:#efeaf7;--plum:#633454;--gold:#c08a45}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}
+    body{margin:0;color:var(--ink);background:var(--paper);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;line-height:1.6;overflow-x:hidden}
+    a{color:inherit}
+    .wrap{width:min(1136px,calc(100% - 48px));margin-inline:auto;position:relative;z-index:1}
+
+    /* Animated soft background */
+    .bg{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+    .blob{position:absolute;border-radius:50%;filter:blur(60px);opacity:.55;animation:drift 22s ease-in-out infinite alternate}
+    .b1{width:460px;height:460px;background:#cfdff5;top:-120px;left:-120px}
+    .b2{width:380px;height:380px;background:#f8dcc6;top:18%;right:-110px;animation-duration:26s;animation-delay:-6s}
+    .b3{width:420px;height:420px;background:#d9e8d6;bottom:-160px;left:22%;animation-duration:30s;animation-delay:-12s}
+    .b4{width:300px;height:300px;background:#e5dcf3;bottom:12%;right:12%;animation-duration:24s;animation-delay:-3s}
+    @keyframes drift{0%{transform:translate(0,0) scale(1)}50%{transform:translate(40px,30px) scale(1.08)}100%{transform:translate(-30px,50px) scale(.96)}}
+    .grain{position:absolute;inset:0;background-image:radial-gradient(rgba(45,79,134,.07) 1px,transparent 1px);background-size:22px 22px;mask-image:linear-gradient(180deg,#000,transparent 70%);-webkit-mask-image:linear-gradient(180deg,#000,transparent 70%)}
+
+    /* Header */
+    header{position:relative;z-index:2}
+    .nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:-.04em;text-decoration:none;font-size:22px;line-height:1}
+    .brand-mark{font:italic 29px Georgia,serif;background:linear-gradient(140deg,#2d4f86,#5f86c2);color:#fff;border-radius:11px;width:40px;height:40px;display:grid;place-items:center;box-shadow:0 8px 18px rgba(45,79,134,.22)}
+    .brand small{display:block;letter-spacing:.13em;font-size:8px;text-transform:uppercase;color:#7f818a;margin-top:7px;font-weight:700}
+    .nav a.site{font-size:12px;font-weight:750;text-decoration:none;border:1px solid #cdd6e4;border-radius:40px;padding:9px 16px;background:rgba(255,255,255,.6);white-space:nowrap}
+    .nav a.site:hover{background:#fff}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:40px 0 30px}
+    .eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:800;color:var(--blue-2);margin:0 0 16px}
+    h1{font-family:Georgia,'Times New Roman',serif;font-weight:400;letter-spacing:-.055em;line-height:1.04;font-size:clamp(44px,6.2vw,78px);margin:0 0 22px}
+    h1 em{font-weight:400;background:linear-gradient(110deg,#2d4f86,#7a9fd6 55%,#c9875a);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .lead{font-size:16.5px;color:#555a68;line-height:1.85;max-width:520px;margin:0 0 26px}
+    .stats{display:flex;flex-wrap:wrap;gap:10px;margin:0;padding:0;list-style:none}
+    .stats li{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.75);border:1px solid #e3e6ec;border-radius:40px;padding:8px 14px;font-size:12.5px;font-weight:700;color:#3d4458}
+    .dot{width:8px;height:8px;border-radius:50%;flex:none}
+    .dot.open{background:#3f9a5b;box-shadow:0 0 0 0 rgba(63,154,91,.5);animation:ping 2s infinite}
+    .dot.closed{background:#b8bcc6}
+    @keyframes ping{0%{box-shadow:0 0 0 0 rgba(63,154,91,.45)}80%,100%{box-shadow:0 0 0 9px rgba(63,154,91,0)}}
+
+    /* Hero illustration: orbiting "form" cards */
+    .orbit{position:relative;height:380px;display:grid;place-items:center}
+    .orbit svg{width:100%;max-width:440px;height:auto;overflow:visible}
+    .spin{animation:spin 38s linear infinite;transform-origin:220px 190px}
+    .spin-rev{animation:spin 52s linear infinite reverse;transform-origin:220px 190px}
+    .bob{animation:bob 6s ease-in-out infinite}
+    .bob2{animation:bob 7.5s ease-in-out infinite reverse}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+
+    /* Sections */
+    .section{padding:34px 0 20px}
+    .sec-head{display:flex;align-items:center;gap:14px;margin:0 0 20px}
+    .sec-head h2{font:normal clamp(26px,3vw,36px)/1.15 Georgia,serif;letter-spacing:-.04em;margin:0}
+    .sec-head .pill{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;border-radius:30px;padding:5px 11px}
+    .pill.open{background:#e3f1e6;color:#2f7446}
+    .pill.closed{background:#eceef2;color:#6a6f7c}
+    .sec-head .line{flex:1;height:1px;background:linear-gradient(90deg,#d9dde5,transparent)}
+    .sec-head h2,.sec-head .pill{white-space:nowrap}
+    @media(max-width:480px){.sec-head{flex-wrap:wrap;gap:8px 12px}.sec-head .line{display:none}.sec-head .pill{font-size:10px}}
+
+    .grid{display:grid;gap:20px}
+    .grid.open{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .grid.closed{grid-template-columns:repeat(3,minmax(0,1fr))}
+
+    .card{position:relative;display:flex;flex-direction:column;background:rgba(255,255,255,.86);backdrop-filter:blur(6px);border:1px solid #e3e5ea;border-radius:22px;overflow:hidden;box-shadow:0 10px 30px rgba(30,45,80,.06);transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s ease,border-color .35s}
+    .card.is-open:hover{transform:translateY(-7px);box-shadow:0 22px 46px rgba(30,45,80,.13);border-color:#cdd8ea}
+    .art{position:relative;height:190px;display:grid;place-items:center;overflow:hidden}
+    .art svg{width:100%;height:100%}
+    .card.is-open .art svg .lift{transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+    .card.is-open:hover .art svg .lift{transform:translateY(-6px)}
+    .art.sky{background:linear-gradient(135deg,#e4edf9,#f3eee6)}
+    .art.plum{background:linear-gradient(135deg,#f6e5ed,#f2ece4)}
+    .art.sage{background:linear-gradient(135deg,#e6efe5,#f1efe8)}
+    .art.lav{background:linear-gradient(135deg,#ebe6f5,#f2eef0)}
+    .art.peach{background:linear-gradient(135deg,#f9e9dc,#f0ede8)}
+    .card.is-closed .art{filter:saturate(.55)}
+    .status{position:absolute;top:14px;left:14px;display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:800;border-radius:30px;padding:5px 11px;background:#fff;box-shadow:0 4px 12px rgba(30,45,80,.08)}
+    .status.open{color:#2f7446}
+    .status.closed{color:#6a6f7c}
+    .body{padding:22px 24px 24px;display:flex;flex-direction:column;flex:1}
+    .tag{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:800;color:var(--blue-2);margin:0 0 8px}
+    .card h3{font:normal 25px/1.2 Georgia,serif;letter-spacing:-.025em;margin:0 0 9px}
+    .grid.closed .card h3{font-size:21px}
+    .card p.desc{font-size:13.5px;color:#626775;line-height:1.75;margin:0 0 18px}
+    .meta{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 20px;padding:0;list-style:none}
+    .meta li{font-size:11.5px;font-weight:700;color:#4b5267;background:#f2f4f8;border-radius:30px;padding:5px 11px}
+    .btn{margin-top:auto;display:flex;align-items:center;justify-content:center;gap:10px;min-height:50px;border-radius:12px;font-weight:800;font-size:14px;text-decoration:none;border:0;width:100%}
+    .btn.go{color:#fff;background:linear-gradient(115deg,#2d4f86,#4b70a8);box-shadow:0 10px 22px rgba(45,79,134,.2);transition:box-shadow .25s,filter .25s}
+    .btn.go.plum{background:linear-gradient(115deg,#633454,#8a4d72);box-shadow:0 10px 22px rgba(99,52,84,.2)}
+    .btn.go:hover{filter:brightness(1.06);box-shadow:0 14px 28px rgba(45,79,134,.28)}
+    .btn.go .arrow{transition:transform .25s}
+    .btn.go:hover .arrow{transform:translateX(4px)}
+    .btn.off{background:#eef0f3;color:#7c818e;cursor:not-allowed;font-size:13px;border:1px dashed #cfd3dc}
+
+    /* Note band */
+    .note{margin:44px 0 10px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;background:rgba(255,255,255,.75);border:1px solid #e3e5ea;border-radius:18px;padding:22px 26px}
+    .note p{margin:0;font-size:14px;color:#4f5566;line-height:1.7}
+    .note strong{font:normal 20px Georgia,serif;color:var(--ink);display:block;margin-bottom:2px}
+    .note a.wa{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-size:13px;font-weight:800;color:#1f6b3e;background:#e3f1e6;border-radius:11px;padding:11px 16px;white-space:nowrap}
+    .note a.wa:hover{background:#d6ebdb}
+
+    footer{position:relative;z-index:1;padding:28px 0 34px;font-size:11.5px;color:#868a94}
+    .footer-row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;border-top:1px solid var(--border);padding-top:22px}
+    footer a{text-decoration:none;font-weight:700;color:#5a6172}
+
+    /* Reveal */
+    .reveal{opacity:0;transform:translateY(24px)}
+    .reveal.in{opacity:1;transform:none;transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1);transition-delay:var(--d,0ms)}
+
+    @media(max-width:980px){.grid.closed{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:860px){.hero{grid-template-columns:1fr;padding:20px 0 10px;gap:0}.orbit{height:300px;order:-1}.orbit svg{max-width:340px}}
+    @media(max-width:700px){
+      .wrap{width:min(100% - 32px,600px)}
+      .grid.open,.grid.closed{grid-template-columns:1fr}
+      .nav{height:68px}.brand small{display:none}
+      .art{height:170px}
+      .card h3{font-size:23px}
+      .note{padding:20px}
+    }
+    @media(max-width:420px){.orbit{height:250px}.nav a.site{padding:8px 12px;font-size:11px}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+  </style>
+</head>
+<body>
+  <div class="bg" aria-hidden="true"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="blob b4"></div><div class="grain"></div></div>
+
+  <header><div class="wrap nav">
+    <a href="./" class="brand"><span class="brand-mark">P</span><span>PsychLogic<small>Where psychology meets strategy.</small></span></a>
+    <a class="site" href="https://psychlogic.in" target="_blank" rel="noopener">psychlogic.in ↗</a>
+  </div></header>
+
+  <main>
+    <section class="wrap hero">
+      <div class="reveal">
+        <p class="eyebrow">PsychLogic Forms</p>
+        <h1>Every registration,<br><em>one calm place.</em></h1>
+        <p class="lead">Join our support group, get your psychology notes, or check what's opening next. Pick a form below to get started.</p>
+        <ul class="stats" aria-label="Form status">
+          <li><span class="dot open"></span><span id="open-count">2</span>&nbsp;open now</li>
+          <li><span class="dot closed"></span><span id="closed-count">3</span>&nbsp;closed for now</li>
+        </ul>
+      </div>
+      <div class="orbit" aria-hidden="true">
+        <svg viewBox="0 0 440 380">
+          <defs>
+            <radialGradient id="core" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#fff6ea"/><stop offset=".6" stop-color="#fbe5d1"/><stop offset="1" stop-color="#fbe5d1" stop-opacity="0"/></radialGradient>
+            <linearGradient id="pg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4f74b0"/><stop offset="1" stop-color="#2d4f86"/></linearGradient>
+            <filter id="sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="6" stdDeviation="7" flood-color="#1e2d50" flood-opacity=".14"/></filter>
+          </defs>
+          <circle cx="220" cy="190" r="120" fill="url(#core)"/>
+          <circle cx="220" cy="190" r="150" fill="none" stroke="#c6d4ea" stroke-dasharray="2 9"/>
+          <circle cx="220" cy="190" r="100" fill="none" stroke="#e2c9b3" stroke-dasharray="2 7"/>
+          <!-- orbiting dots -->
+          <g class="spin"><circle cx="370" cy="190" r="7" fill="#7aa67d"/><circle cx="70" cy="190" r="5" fill="#8e7cc0"/><circle cx="220" cy="40" r="6" fill="#e0b25c"/></g>
+          <g class="spin-rev"><circle cx="320" cy="190" r="5" fill="#d99a6c"/><circle cx="120" cy="190" r="6" fill="#5f86c2"/></g>
+          <!-- central clipboard -->
+          <g class="bob" filter="url(#sh)">
+            <rect x="168" y="112" width="104" height="134" rx="14" fill="#fff"/>
+            <rect x="196" y="102" width="48" height="20" rx="8" fill="url(#pg)"/>
+            <rect x="186" y="140" width="68" height="7" rx="3.5" fill="#dfe6f2"/>
+            <g><rect x="186" y="160" width="14" height="14" rx="4" fill="#e3f1e6"/><path d="M189 167l3 3 6-6" stroke="#3f9a5b" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="206" y="163" width="48" height="7" rx="3.5" fill="#e9edf4"/></g>
+            <g><rect x="186" y="184" width="14" height="14" rx="4" fill="#e3f1e6"/><path d="M189 191l3 3 6-6" stroke="#3f9a5b" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="206" y="187" width="40" height="7" rx="3.5" fill="#e9edf4"/></g>
+            <g><rect x="186" y="208" width="14" height="14" rx="4" fill="#f1f2f5"/><rect x="206" y="211" width="44" height="7" rx="3.5" fill="#e9edf4"/></g>
+          </g>
+          <!-- floating chips -->
+          <g class="bob2" filter="url(#sh)">
+            <rect x="290" y="70" width="124" height="40" rx="20" fill="#fff"/>
+            <circle cx="310" cy="90" r="6" fill="#3f9a5b"/>
+            <text x="324" y="95" font-family="Inter,system-ui,sans-serif" font-size="13" font-weight="700" fill="#2f7446">Support Group</text>
+          </g>
+          <g class="bob" filter="url(#sh)">
+            <rect x="22" y="252" width="116" height="40" rx="20" fill="#fff"/>
+            <circle cx="42" cy="272" r="6" fill="#3f9a5b"/>
+            <text x="56" y="277" font-family="Inter,system-ui,sans-serif" font-size="13" font-weight="700" fill="#2f7446">Notes</text>
+          </g>
+          <g class="bob2" filter="url(#sh)">
+            <rect x="282" y="288" width="128" height="40" rx="20" fill="#fff"/>
+            <circle cx="302" cy="308" r="6" fill="#b8bcc6"/>
+            <text x="316" y="313" font-family="Inter,system-ui,sans-serif" font-size="13" font-weight="700" fill="#6a6f7c">Opening soon</text>
+          </g>
+          <path d="M60 110c0-8 6-14 14-14s14 6 14 14c0 12-14 20-14 20s-14-8-14-20z" fill="#e7a7a0" opacity=".85" class="bob"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- OPEN FORMS -->
+    <section class="wrap section" aria-labelledby="open-title">
+      <div class="sec-head reveal"><h2 id="open-title">Open now</h2><span class="pill open">Accepting responses</span><span class="line"></span></div>
+      <div class="grid open">
+
+        <article class="card is-open reveal" style="--d:0ms">
+          <div class="art sky" aria-hidden="true">
+            <svg viewBox="0 0 520 190" preserveAspectRatio="xMidYMid slice">
+              <circle cx="260" cy="100" r="70" fill="#fbe4cf" opacity=".8"/>
+              <circle cx="260" cy="100" r="58" fill="none" stroke="#b9cae4" stroke-dasharray="3 7"/>
+              <g class="lift">
+                <g transform="translate(260 44)"><circle r="11" fill="#2d4f86"/><path d="M-17 28c1-13 8-19 17-19s16 6 17 19z" fill="#2d4f86"/></g>
+                <g transform="translate(318 78)"><circle r="10" fill="#d99a6c"/><path d="M-16 26c1-12 7-17 16-17s15 5 16 17z" fill="#d99a6c"/></g>
+                <g transform="translate(300 134)"><circle r="10" fill="#7aa67d"/><path d="M-16 26c1-12 7-17 16-17s15 5 16 17z" fill="#7aa67d"/></g>
+                <g transform="translate(220 134)"><circle r="10" fill="#8e7cc0"/><path d="M-16 26c1-12 7-17 16-17s15 5 16 17z" fill="#8e7cc0"/></g>
+                <g transform="translate(202 78)"><circle r="10" fill="#e0b25c"/><path d="M-16 26c1-12 7-17 16-17s15 5 16 17z" fill="#e0b25c"/></g>
+                <path d="M260 122c-18-12-26-21-26-31 0-8 6-14 14-14 5 0 9 3 12 7 3-4 7-7 12-7 8 0 14 6 14 14 0 10-8 19-26 31z" fill="#2d4f86"/>
+              </g>
+              <g><rect x="356" y="34" width="92" height="34" rx="13" fill="#fff"/><text x="402" y="56" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="13" fill="#2d4f86">I hear you.</text></g>
+              <g><rect x="72" y="122" width="88" height="34" rx="13" fill="#fff"/><text x="116" y="144" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="13" fill="#6b4a2f">Me too. 💙</text></g>
+            </svg>
+            <span class="status open"><span class="dot open"></span>Open</span>
+          </div>
+          <div class="body">
+            <p class="tag">Wellbeing · Psychologist-led</p>
+            <h3>Support Group 💙</h3>
+            <p class="desc">A safe, non-judgmental space to talk, listen, or simply sit in silence — with mood-lifting activities, games and small weekly tasks.</p>
+            <ul class="meta"><li>₹199 one-time</li><li>Refundable before 2nd session</li></ul>
+            <a class="btn go" href="support-group/">Join the support group <span class="arrow" aria-hidden="true">→</span></a>
+          </div>
+        </article>
+
+        <article class="card is-open reveal" style="--d:120ms">
+          <div class="art plum" aria-hidden="true">
+            <svg viewBox="0 0 520 190" preserveAspectRatio="xMidYMid slice">
+              <g class="lift">
+                <g transform="rotate(-9 230 100)"><rect x="170" y="34" width="120" height="140" rx="8" fill="#fffcf7" stroke="#eadfe0"/><rect x="186" y="54" width="70" height="9" rx="4.5" fill="#633454" opacity=".85"/><rect x="186" y="76" width="88" height="6" rx="3" fill="#eadfe2"/><rect x="186" y="92" width="72" height="6" rx="3" fill="#eadfe2"/><rect x="186" y="108" width="84" height="6" rx="3" fill="#eadfe2"/><circle cx="252" cy="140" r="16" fill="none" stroke="#c9a7bd"/></g>
+                <g transform="rotate(7 300 100)"><rect x="252" y="40" width="120" height="140" rx="8" fill="#fff" stroke="#e8dde3"/><rect x="268" y="60" width="62" height="9" rx="4.5" fill="#c08a45" opacity=".8"/><rect x="268" y="82" width="88" height="6" rx="3" fill="#efe6e9"/><rect x="268" y="98" width="70" height="6" rx="3" fill="#efe6e9"/><rect x="268" y="114" width="80" height="6" rx="3" fill="#efe6e9"/><rect x="268" y="132" width="40" height="26" rx="5" fill="#e8f0e8"/><rect x="314" y="132" width="40" height="26" rx="5" fill="#f6e5ed"/></g>
+              </g>
+              <g><rect x="70" y="128" width="96" height="34" rx="13" fill="#fff"/><text x="118" y="150" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="13" fill="#633454">Learn deeply.</text></g>
+              <circle cx="410" cy="60" r="7" fill="#e5c8d3"/><circle cx="430" cy="140" r="4" fill="#d5bfce"/>
+            </svg>
+            <span class="status open"><span class="dot open"></span>Open</span>
+          </div>
+          <div class="body">
+            <p class="tag">Study material · Lifetime access</p>
+            <h3>Psychology Notes</h3>
+            <p class="desc">Handcrafted, exam-focused notes with clear concepts, diagrams and revision-friendly summaries. Preview real sample pages before you buy.</p>
+            <ul class="meta"><li>12 subjects</li><li>Delivered by email</li></ul>
+            <a class="btn go plum" href="https://notes.psychlogic.in" rel="noopener">Get your notes <span class="arrow" aria-hidden="true">→</span></a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CLOSED FORMS -->
+    <section class="wrap section" aria-labelledby="closed-title">
+      <div class="sec-head reveal"><h2 id="closed-title">Closed for now</h2><span class="pill closed">Not accepting responses</span><span class="line"></span></div>
+      <div class="grid closed">
+
+        <article class="card is-closed reveal" style="--d:0ms">
+          <div class="art lav" aria-hidden="true">
+            <svg viewBox="0 0 360 190" preserveAspectRatio="xMidYMid slice">
+              <g transform="translate(176 96)">
+                <rect x="-66" y="-50" width="132" height="96" rx="10" fill="#fff" stroke="#cfc4e6"/>
+                <rect x="-58" y="-42" width="116" height="80" rx="6" fill="none" stroke="#e6def4" stroke-dasharray="3 4"/>
+                <rect x="-40" y="-28" width="64" height="8" rx="4" fill="#8e7cc0" opacity=".85"/>
+                <rect x="-40" y="-10" width="80" height="6" rx="3" fill="#ece7f6"/>
+                <rect x="-40" y="4" width="62" height="6" rx="3" fill="#ece7f6"/>
+                <g transform="translate(46 30)"><path d="M-8 6l-6 22 8-5 6 7 2-22z" fill="#c9bde6"/><path d="M8 6l6 22-8-5-6 7-2-22z" fill="#b6a6dd"/><circle r="16" fill="#8e7cc0"/><circle r="11" fill="none" stroke="#fff" stroke-width="1.5" stroke-dasharray="2 2"/><text y="4" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="9" font-weight="800" fill="#fff">RCI</text></g>
+              </g>
+              <g transform="translate(284 50)"><circle r="16" fill="#fff"/><path d="M-6 0h12M0-6v12" stroke="#8e7cc0" stroke-width="3" stroke-linecap="round"/></g>
+              <circle cx="70" cy="60" r="6" fill="#d9cff0"/><circle cx="90" cy="150" r="4" fill="#cfc4e6"/>
+            </svg>
+            <span class="status closed"><span class="dot closed"></span>Closed</span>
+          </div>
+          <div class="body">
+            <p class="tag">Entrance exam</p>
+            <h3>RCI M.Phil Clinical Psychology</h3>
+            <p class="desc">Registration for our M.Phil Clinical Psychology entrance preparation.</p>
+            <span class="btn off" role="button" aria-disabled="true">🔒 Registration closed</span>
+          </div>
+        </article>
+
+        <article class="card is-closed reveal" style="--d:120ms">
+          <div class="art peach" aria-hidden="true">
+            <svg viewBox="0 0 360 190" preserveAspectRatio="xMidYMid slice">
+              <g transform="translate(180 96)">
+                <rect x="-58" y="-56" width="116" height="112" rx="12" fill="#fff" stroke="#efd8c4"/>
+                <g fill="#f3e3d5"><rect x="-40" y="-36" width="80" height="8" rx="4"/></g>
+                <g><circle cx="-34" cy="-6" r="7" fill="none" stroke="#d99a6c" stroke-width="2"/><circle cx="-34" cy="-6" r="3" fill="#d99a6c"/><rect x="-20" y="-9" width="56" height="6" rx="3" fill="#f3e3d5"/></g>
+                <g><circle cx="-34" cy="16" r="7" fill="none" stroke="#d99a6c" stroke-width="2"/><rect x="-20" y="13" width="48" height="6" rx="3" fill="#f3e3d5"/></g>
+                <g><circle cx="-34" cy="38" r="7" fill="none" stroke="#d99a6c" stroke-width="2"/><rect x="-20" y="35" width="52" height="6" rx="3" fill="#f3e3d5"/></g>
+              </g>
+              <g transform="translate(286 60)"><circle r="22" fill="#fff"/><circle r="15" fill="none" stroke="#c08a45" stroke-width="2.4"/><path d="M0-9V0l6 4" stroke="#c08a45" stroke-width="2.4" fill="none" stroke-linecap="round"/></g>
+              <circle cx="66" cy="140" r="6" fill="#f1d3b9"/>
+            </svg>
+            <span class="status closed"><span class="dot closed"></span>Closed</span>
+          </div>
+          <div class="body">
+            <p class="tag">Practice · Timed tests</p>
+            <h3>Clinical Psychology Mock Test Series</h3>
+            <p class="desc">Full-length and sectional mock tests with answer keys and easy explanations.</p>
+            <span class="btn off" role="button" aria-disabled="true">🔒 Registration closed</span>
+          </div>
+        </article>
+
+        <article class="card is-closed reveal" style="--d:240ms">
+          <div class="art sage" aria-hidden="true">
+            <svg viewBox="0 0 360 190" preserveAspectRatio="xMidYMid slice">
+              <g transform="translate(180 100)">
+                <path d="M-70 40V-6c0-4 3-7 7-7h126c4 0 7 3 7 7v46" fill="none" stroke="#9cbf9e" stroke-width="2"/>
+                <path d="M-80 40h160" stroke="#7aa67d" stroke-width="3" stroke-linecap="round"/>
+                <g fill="#fff" stroke="#b9d3ba"><rect x="-54" y="0" width="22" height="40" rx="3"/><rect x="-22" y="0" width="22" height="40" rx="3"/><rect x="10" y="0" width="22" height="40" rx="3"/><rect x="42" y="0" width="12" height="40" rx="3"/></g>
+                <path d="M-74-13L0-48l74 35z" fill="#fff" stroke="#9cbf9e" stroke-width="2" stroke-linejoin="round"/>
+                <text y="-20" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="12" font-weight="800" fill="#5f8d63">GATE</text>
+              </g>
+              <circle cx="72" cy="56" r="6" fill="#cfe0cd"/><circle cx="296" cy="146" r="5" fill="#cfe0cd"/>
+            </svg>
+            <span class="status closed"><span class="dot closed"></span>Closed</span>
+          </div>
+          <div class="body">
+            <p class="tag">Entrance exam</p>
+            <h3>GATE Psychology</h3>
+            <p class="desc">Registration for our GATE Psychology preparation.</p>
+            <span class="btn off" role="button" aria-disabled="true">🔒 Registration closed</span>
+          </div>
+        </article>
+      </div>
+
+      <div class="note reveal">
+        <p><strong>Waiting for a form to open?</strong>Message us and we'll let you know when registrations start.</p>
+        <a class="wa" href="https://wa.me/917987623467?text=Hi%20PsychLogic!%20Please%20let%20me%20know%20when%20registrations%20open%20for%3A%20" target="_blank" rel="noopener noreferrer">💬 Notify me on WhatsApp</a>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="wrap footer-row">
+    <span>© <span id="year"></span> PsychLogic · <a href="https://psychlogic.in" target="_blank" rel="noopener">psychlogic.in</a> · <a href="mailto:team@psychlogic.in">team@psychlogic.in</a></span>
+    <span>Where psychology meets strategy.</span>
+  </div></footer>
+
+  <script>
+  'use strict';
+  document.getElementById('year').textContent = new Date().getFullYear();
+  // Keep the counts in the hero in sync with the cards.
+  document.getElementById('open-count').textContent = document.querySelectorAll('.card.is-open').length;
+  document.getElementById('closed-count').textContent = document.querySelectorAll('.card.is-closed').length;
+  // Gentle reveal on scroll (content is never left hidden).
+  const els = [...document.querySelectorAll('.reveal')];
+  if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), {threshold: .08});
+    els.forEach(el => io.observe(el));
+    setTimeout(() => els.forEach(el => el.classList.add('in')), 3500);
+  } else { els.forEach(el => el.classList.add('in')); }
+  </script>
+</body>
+</html>
